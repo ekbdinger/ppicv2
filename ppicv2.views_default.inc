@@ -100,7 +100,8 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
+  $handler->display->display_options['header']['area']['content'] = '<p>&nbsp;</p>
+<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
 
 <p>If you have any questions about this program before speaking with clients, please refer to the links on this page or contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a>.</p>
 <br /> <p>Below is a list of insurance incentive programs put together by the eCW PPIC (Private Payer Incentive Consulting) Team.  This list will be updated on a regular basis by the PPIC team.</p>
@@ -108,6 +109,17 @@ function ppicv2_views_default_views() {
 <br />
 <h1>PPIC Programs</h1>';
   $handler->display->display_options['header']['area']['format'] = '2';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No programs found';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p>&nbsp;</p>
+<h2>Sorry!  Your Search returned no results.</h2>
+<p>Unfortunately, there are no available incentive programs matching your search at this time.  Please contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a> with any inquiries about available incentive programs that we possibly have not updated or added added here on the eKB.</p>
+<p>Thank you!</p>';
+  $handler->display->display_options['empty']['area']['format'] = '2';
   /* Field: Content: State */
   $handler->display->display_options['fields']['field_ppic_state']['id'] = 'field_ppic_state';
   $handler->display->display_options['fields']['field_ppic_state']['table'] = 'field_data_field_ppic_state';
@@ -339,6 +351,7 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'input_required';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Go!';
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = '2';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
