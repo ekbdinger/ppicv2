@@ -100,8 +100,7 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>&nbsp;</p>
-<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
+  $handler->display->display_options['header']['area']['content'] = '<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
 
 <p>If you have any questions about this program before speaking with clients, please refer to the links on this page or contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a>.</p>
 <br /> <p>Below is a list of insurance incentive programs put together by the eCW PPIC (Private Payer Incentive Consulting) Team.  This list will be updated on a regular basis by the PPIC team.</p>
