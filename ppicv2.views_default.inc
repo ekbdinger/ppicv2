@@ -99,6 +99,7 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
 
 <p>If you have any questions about this program before speaking with clients, please refer to the links on this page or contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a>.</p>
@@ -328,6 +329,42 @@ function ppicv2_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'ppic-programs';
+  $handler->display->display_options['menu']['title'] = 'PPIC Programs';
+  $handler->display->display_options['menu']['weight'] = '1';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: PPIC Quick Program Search */
+  $handler = $view->new_display('page', 'PPIC Quick Program Search', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'input_required';
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = '2';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<style>
+li { 
+    font-weight:bold;
+}
+li span {
+    font-weight:normal;
+}
+</style>
+
+<p>
+	<strong>How to use the PPIC Program Search</strong>
+</p>
+<ol>
+	<strong><li><span>Select the state where the client is located.</span></li>
+	<li><span>Select the specialty of the client.</span></li>
+	<li><span>Click the <strong>Go</strong> button. (This will bring you to another page that will have the available programs, payment calculators, and other additional information regarding the incentive programs.)</li></span></strong>
+</ol>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['path'] = 'ppic/quick-program-search';
   $handler->display->display_options['menu']['title'] = 'PPIC Programs';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
