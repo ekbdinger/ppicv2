@@ -28,7 +28,6 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['access']['role'] = array(
     3 => '3',
     5 => '5',
-    47 => '47',
   );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -333,6 +332,8 @@ function ppicv2_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'PPIC Team Primary Page (old)';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -349,7 +350,7 @@ function ppicv2_views_default_views() {
 <p>See this Prezi for more information on the PPIC team and incentive programs.<iframe frameborder="0" height="400" src="http://prezi.com/embed/ee6032d9ace139a2b0a34a60a687ccf8053c1a2b/?bgcolor=ff…" width="550"></iframe></p>
 <p>&nbsp;</p>';
   $handler->display->display_options['header']['area']['format'] = '2';
-  $handler->display->display_options['path'] = 'ppic';
+  $handler->display->display_options['path'] = 'ppic/old';
   $handler->display->display_options['menu']['title'] = 'PPIC Programs';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
