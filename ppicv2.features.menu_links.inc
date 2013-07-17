@@ -26,7 +26,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -46,
   );
   // Exported menu link: menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/Enterprise%20Presentation.pdf
   $menu_links['menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/Enterprise%20Presentation.pdf'] = array(
@@ -44,7 +44,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -45,
   );
   // Exported menu link: menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/Incentive%20Consulting%20Flyer.pdf
   $menu_links['menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/Incentive%20Consulting%20Flyer.pdf'] = array(
@@ -62,7 +62,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -48,
   );
   // Exported menu link: menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/PPIC%20Internal%20Presentation.pdf
   $menu_links['menu-ppic-navigation:http://int.ecwknowledgebase.com/sites/default/files/departments/ppic/PPIC%20Internal%20Presentation.pdf'] = array(
@@ -80,7 +80,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 1,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -47,
   );
   // Exported menu link: menu-ppic-navigation:node/9911
   $menu_links['menu-ppic-navigation:node/9911'] = array(
@@ -98,7 +98,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -43,
   );
   // Exported menu link: menu-ppic-navigation:node/9912
   $menu_links['menu-ppic-navigation:node/9912'] = array(
@@ -116,7 +116,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -42,
   );
   // Exported menu link: menu-ppic-navigation:node/9913
   $menu_links['menu-ppic-navigation:node/9913'] = array(
@@ -134,7 +134,7 @@ function ppicv2_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -44,
   );
   // Exported menu link: menu-ppic-navigation:ppic-programs
   $menu_links['menu-ppic-navigation:ppic-programs'] = array(

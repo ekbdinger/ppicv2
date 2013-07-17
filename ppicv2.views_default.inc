@@ -101,6 +101,9 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<p>eCW has started a new Private Payer Incentive Consulting (PPIC) team, designed to help clients receive incentive money from a variety of private insurance companies. We need your help in spreading awareness and interest.  For more information, please see this <a href="/node/9391" target="_blank">announcement on the eKB.</a></p>
+<p>See this Prezi for more information on the PPIC team and incentive programs.
+<iframe src="http://prezi.com/embed/ee6032d9ace139a2b0a34a60a687ccf8053c1a2b/?bgcolor=ff…" width="550" height="400" frameBorder="0"></iframe>
+</p>
 
 <p>If you have any questions about this program before speaking with clients, please refer to the links on this page or contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a>.</p>
 <br /> <p>Below is a list of insurance incentive programs put together by the eCW PPIC (Private Payer Incentive Consulting) Team.  This list will be updated on a regular basis by the PPIC team.</p>
@@ -339,7 +342,7 @@ function ppicv2_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'ppic-programs';
+  $handler->display->display_options['path'] = 'ppic';
   $handler->display->display_options['menu']['title'] = 'PPIC Programs';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
@@ -347,6 +350,8 @@ function ppicv2_views_default_views() {
 
   /* Display: PPIC Quick Program Search */
   $handler = $view->new_display('page', 'PPIC Quick Program Search', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'PPIC Quick Program Search';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'input_required';
@@ -358,29 +363,160 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<style>
-li { 
-    font-weight:bold;
-}
-li span {
-    font-weight:normal;
-}
-</style>
-
-<p>
+  $handler->display->display_options['header']['area']['content'] = '<p>
 	<strong>How to use the PPIC Program Search</strong>
 </p>
 <ol>
-	<strong><li><span>Select the state where the client is located.</span></li>
-	<li><span>Select the specialty of the client.</span></li>
-	<li><span>Click the <strong>Go</strong> button. (This will bring you to another page that will have the available programs, payment calculators, and other additional information regarding the incentive programs.)</li></span></strong>
+	<li>Select the state where the client is located.</li>
+	<li>Select the specialty of the client.</li>
+	<li>Click the <strong>Go</strong> button. (This will bring you to another page that will have the available programs, payment calculators, and other additional information regarding the incentive programs.)</li>
 </ol>';
   $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'ppic_program' => 'ppic_program',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: State (field_ppic_state) */
+  $handler->display->display_options['filters']['field_ppic_state_value']['id'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['table'] = 'field_data_field_ppic_state';
+  $handler->display->display_options['filters']['field_ppic_state_value']['field'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_ppic_state_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['operator_id'] = 'field_ppic_state_value_op';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['operator'] = 'field_ppic_state_value_op';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['identifier'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+  );
+  /* Filter criterion: Content: Specialty (field_ppic_specialty) */
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['id'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['table'] = 'field_data_field_ppic_specialty';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['field'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['operator_id'] = 'field_ppic_specialty_value_op';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['label'] = 'Specialty';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['operator'] = 'field_ppic_specialty_value_op';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['identifier'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+  );
   $handler->display->display_options['path'] = 'ppic/quick-program-search';
   $handler->display->display_options['menu']['title'] = 'PPIC Programs';
   $handler->display->display_options['menu']['weight'] = '1';
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: No Header */
+  $handler = $view->new_display('page', 'No Header', 'page_2');
+  $handler->display->display_options['display_description'] = 'List of PPIC Programs, with no header displayed at the top';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['path'] = 'ppic/programs-no-header';
   $export['ppic_programs'] = $view;
 
   return $export;
