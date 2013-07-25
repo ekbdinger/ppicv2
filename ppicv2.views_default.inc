@@ -670,6 +670,310 @@ function ppicv2_views_default_views() {
     47 => 0,
   );
   $handler->display->display_options['path'] = 'ppic/programs/state';
+
+  /* Display: VBO */
+  $handler = $view->new_display('page', 'VBO', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Available Programs by State (VBO)';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Start searching now or browse through the list!</h3>
+<p>Any state you do not find information on, please email ppic@eclinicalworks.com as we may have information that has not been updated on the eKB yet.</p>
+<p>&nbsp;</p>';
+  $handler->display->display_options['header']['area']['format'] = '2';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::flag_node_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          'ppic_program::field_ppic_specialty' => 'ppic_program::field_ppic_specialty',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::2' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Content: State */
+  $handler->display->display_options['fields']['field_ppic_state']['id'] = 'field_ppic_state';
+  $handler->display->display_options['fields']['field_ppic_state']['table'] = 'field_data_field_ppic_state';
+  $handler->display->display_options['fields']['field_ppic_state']['field'] = 'field_ppic_state';
+  $handler->display->display_options['fields']['field_ppic_state']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_ppic_state']['delta_offset'] = '0';
+  /* Field: Content: Specialty */
+  $handler->display->display_options['fields']['field_ppic_specialty']['id'] = 'field_ppic_specialty';
+  $handler->display->display_options['fields']['field_ppic_specialty']['table'] = 'field_data_field_ppic_specialty';
+  $handler->display->display_options['fields']['field_ppic_specialty']['field'] = 'field_ppic_specialty';
+  /* Field: Content: Payer */
+  $handler->display->display_options['fields']['field_ppic_payer']['id'] = 'field_ppic_payer';
+  $handler->display->display_options['fields']['field_ppic_payer']['table'] = 'field_data_field_ppic_payer';
+  $handler->display->display_options['fields']['field_ppic_payer']['field'] = 'field_ppic_payer';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Payment Rating */
+  $handler->display->display_options['fields']['field_ppic_payment_rating']['id'] = 'field_ppic_payment_rating';
+  $handler->display->display_options['fields']['field_ppic_payment_rating']['table'] = 'field_data_field_ppic_payment_rating';
+  $handler->display->display_options['fields']['field_ppic_payment_rating']['field'] = 'field_ppic_payment_rating';
+  /* Field: Content: Additional Info */
+  $handler->display->display_options['fields']['field_ppic_additional_info']['id'] = 'field_ppic_additional_info';
+  $handler->display->display_options['fields']['field_ppic_additional_info']['table'] = 'field_data_field_ppic_additional_info';
+  $handler->display->display_options['fields']['field_ppic_additional_info']['field'] = 'field_ppic_additional_info';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'ppic_program' => 'ppic_program',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: State (field_ppic_state) */
+  $handler->display->display_options['filters']['field_ppic_state_value']['id'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['table'] = 'field_data_field_ppic_state';
+  $handler->display->display_options['filters']['field_ppic_state_value']['field'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_ppic_state_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['operator_id'] = 'field_ppic_state_value_op';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['label'] = 'State';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['operator'] = 'field_ppic_state_value_op';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['identifier'] = 'field_ppic_state_value';
+  $handler->display->display_options['filters']['field_ppic_state_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+  );
+  /* Filter criterion: Content: Specialty (field_ppic_specialty) */
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['id'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['table'] = 'field_data_field_ppic_specialty';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['field'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['operator_id'] = 'field_ppic_specialty_value_op';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['label'] = 'Specialty';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['operator'] = 'field_ppic_specialty_value_op';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['identifier'] = 'field_ppic_specialty_value';
+  $handler->display->display_options['filters']['field_ppic_specialty_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    3 => 0,
+    1 => 0,
+    23 => 0,
+    21 => 0,
+    36 => 0,
+    43 => 0,
+    39 => 0,
+    25 => 0,
+    46 => 0,
+    9 => 0,
+    31 => 0,
+    19 => 0,
+    14 => 0,
+    15 => 0,
+    13 => 0,
+    5 => 0,
+    22 => 0,
+    12 => 0,
+    30 => 0,
+    38 => 0,
+    11 => 0,
+    42 => 0,
+    40 => 0,
+    29 => 0,
+    32 => 0,
+    35 => 0,
+    41 => 0,
+    28 => 0,
+    16 => 0,
+    45 => 0,
+    27 => 0,
+    24 => 0,
+    37 => 0,
+    26 => 0,
+    34 => 0,
+    18 => 0,
+    17 => 0,
+    33 => 0,
+    44 => 0,
+    20 => 0,
+    7 => 0,
+    8 => 0,
+    47 => 0,
+  );
+  $handler->display->display_options['path'] = 'ppic/programs/state/vbo';
   $export['ppic_programs'] = $view;
 
   return $export;
