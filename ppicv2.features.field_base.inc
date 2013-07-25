@@ -178,7 +178,6 @@ function ppicv2_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'ALL' => 'All Specialties',
         'CA' => 'Cardiology',
         'ENDO' => 'Endocrinology',
         'OB' => 'OB/GYN',
@@ -190,6 +189,7 @@ function ppicv2_field_default_field_bases() {
       ),
       'allowed_values_function' => '',
       'allowed_values_php' => '',
+      'profile2_private' => FALSE,
     ),
     'translatable' => 0,
     'type' => 'list_text',
