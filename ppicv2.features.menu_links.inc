@@ -136,24 +136,6 @@ function ppicv2_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -47,
   );
-  // Exported menu link: menu-ppic-navigation:ppic-programs
-  $menu_links['menu-ppic-navigation:ppic-programs'] = array(
-    'menu_name' => 'menu-ppic-navigation',
-    'link_path' => 'ppic-programs',
-    'router_path' => 'ppic-programs',
-    'link_title' => 'PPIC Home',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -50,
-  );
   // Exported menu link: menu-ppic-worker:node/add/ppic-program
   $menu_links['menu-ppic-worker:node/add/ppic-program'] = array(
     'menu_name' => 'menu-ppic-worker',
@@ -172,33 +154,13 @@ function ppicv2_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => 0,
   );
-  // Exported menu link: menu-ppic-worker:ppic-programs
-  $menu_links['menu-ppic-worker:ppic-programs'] = array(
-    'menu_name' => 'menu-ppic-worker',
-    'link_path' => 'ppic-programs',
-    'router_path' => 'ppic-programs',
-    'link_title' => 'PPIC Programs',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Enterprise Summit Presentation');
   t('Marketing Flyer');
   t('Marketing Pieces');
   t('New PPIC Program');
-  t('PPIC Home');
   t('PPIC Internal Presentation');
-  t('PPIC Programs');
   t('PPIC Webinar');
   t('Team Member Info');
   t('Videos and Presentations');
