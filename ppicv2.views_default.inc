@@ -110,7 +110,7 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<p>&nbsp;</p>
 <h2>Sorry!  Your Search returned no results.</h2>
-<p>Unfortunately, there are no available incentive programs matching your search at this time.  Please contact <a href="mailto:ppic@eclinicalworks.com">ppic@eclinicalworks.com</a> with any inquiries about available incentive programs that we possibly have not updated or added added here on the eKB.</p>
+<p>Unfortunately, there are no available incentive programs matching your search at this time.  Please contact <a href="mailto:incentiveprograms@eclinicalworks.com">incentiveprograms@eclinicalworks.com</a> with any inquiries about available incentive programs that we possibly have not updated or added added here on the eKB.</p>
 <p>Thank you!</p>';
   $handler->display->display_options['empty']['area']['format'] = '2';
   /* Field: Content: State */
@@ -378,6 +378,7 @@ function ppicv2_views_default_views() {
 	<li>Select the state where the client is located.</li>
 	<li>Select the specialty of the client.</li>
 	<li>Click the <strong>Go</strong> button. (This will bring you to another page that will have the available programs, payment calculators, and other additional information regarding the incentive programs.)</li>
+	<li>Not finding what you are looking for? Please send us a request at <a href="mailto:incentiveprograms@eclinicalworks.com">incentiveprograms@eclinicalworks.com!</a> When requesting research for additional programs to be processed, please provide us with the client name, state, top 5 insurances and the Insurance Company Provider Representatives if available. This information will allow us to process your request in a timely manner.</li>
 </ol>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -537,7 +538,7 @@ function ppicv2_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<h3>Start searching now or browse through the list!</h3>
-<p>Any state you do not find information on, please email ppic@eclinicalworks.com as we may have information that has not been updated on the eKB yet.</p>
+<p>Any state you do not find information on, please email <a href="mailto:incentiveprograms@eclinicalworks.com">incentiveprograms@eclinicalworks.com</a> as we may have information that has not been updated on the eKB yet.  In your request, please provide the following information:  Client Name, State, Top 5 Insurances and the Insurance Company Provider Representative if available. This information will allow us to process your request in a timely manner</p>
 <p>&nbsp;</p>';
   $handler->display->display_options['header']['area']['format'] = '2';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
